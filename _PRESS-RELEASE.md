@@ -18,25 +18,40 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+  Hotel 
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+    Hotel management system that allows you to manage rooms, reservations, laundry, kitchen and activities for your hotel.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  Hotel management system that allows you to manage rooms, reservations, laundry, kitchen and activities for your hotel.
+    Rooms: you can see the equipment of the room, beds, linens, tv's, etc.
+    Reservations: you can make reservations when the person calls.
+    Laundry: you can see if the machine is available.
+    Activities: You can stream the events from the website in a monitor.
+    Kitchen: You are able to see the menu.
 
 ## Problem ##
   > Describe the problem your product solves.
+  Small and midium size hotels have a lot to manage but they have to use different webapps that manage rooms but not specific things as the equipment of a room.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+    Rooms: you can see the equipment of the room, beds, linens, tv's, etc.
+    Reservations: you can make reservations when the person calls.
+    Laundry: you can see if the machine is available.
+    Activities: You can stream the events from the website in a monitor.
+    Kitchen: You are able to see the menu.
+
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
-
+    Go to EasyHotelm
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
 
