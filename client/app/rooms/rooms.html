@@ -1,0 +1,23 @@
+<div id='container'>
+  <div ng-controller="RoomsController">
+  	<input ng-model="search.url" class="form-control" placeholder="Filter by website">
+    <ul class="list-group">
+      <li ng-repeat="link in data.links | filter:search" class="list-group-item fx-fade-down">
+        <div class="row">
+          <div class="col-md-10">
+            <h3>{{ link.title }} <small>{{link.url}}</small> </h3>
+          </div>
+          <div class="col-md-1">
+            <div class ="btn btn-success disabled">Visited: {{link.visits}} </div>
+          </div>
+          <div class="col-md-1">
+            <a href="{{link.base_url}}/api/links/{{link.code}}" class="btn btn-primary">
+             Go
+            <a>
+          </div>
+        </div>
+      </li>
+    </ul>
+    
+  </div>
+</div>
