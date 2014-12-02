@@ -4,7 +4,6 @@ var morgan = require('morgan');             // log requests to the console (expr
 var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
 var http = require('http').Server(app);
-var io = require('socket.io')(http);
 
 // configuration =================
 
@@ -15,12 +14,6 @@ app.use(bodyParser.urlencoded({'extended':'true'}));            // parse applica
 app.use(bodyParser.json());                                     // parse application/json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 app.use(methodOverride());
-
-io.on('connection', function(socket){
-  console.log('a user connected');
-});
-
-
 
 // listen (start app with node server.js) ======================================
 app.listen(8080);

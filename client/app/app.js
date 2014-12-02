@@ -3,8 +3,9 @@ angular.module('deskbell', [
   'deskbell.auth',
   'deskbell.helpdesk',
   'deskbell.guests',
-  'ngRoute'
-])
+  'ngRoute',
+    'btford.socket-io'
+  ])
 .config(function($routeProvider, $httpProvider) {
   $routeProvider
     .when('/signin', {
@@ -33,7 +34,7 @@ angular.module('deskbell', [
     })
     .when('/helpdesk', {
       templateUrl: 'app/helpdesk/helpdesk.html',
-      controller: 'HelpdeskController'
+      controller: 'SocketCtrl'
     })
     .otherwise({
       redirectTo: '/rooms'
