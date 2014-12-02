@@ -1,62 +1,59 @@
 angular.module('deskbell.auth', [])
 
-.controller('AuthController', function ($scope, $window, $location, Auth) {
-  $scope.user = {};
+.controller('AuthController', function($scope, Auth) {
+  angular.extend($scope, Auth);
+  $scope.user = Auth.isAuth();
 
-  $scope.signin = function () {
-    Auth.signin($scope.user)
-      .then(function (token) {
-        $window.localStorage.setItem('com.deskbell', token);
-        $location.path('/links');
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
-  };
+   //  $scope.signin()
+   //    .then(function(data) {
+   //  console.log('This is de DATA: ', data);
+   //    $scope.user = data;
+   // });
 
-  $scope.signup = function () {
-    Auth.signup($scope.user)
-      .then(function (token) {
-        $window.localStorage.setItem('com.deskbell', token);
-        $location.path('/links');
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
-  };
+   //  $scope.signup()
+   //    .then(function(data) {
+   //  console.log('This is de DATA: ', data);
+   // });
 })
-.factory('Auth', function ($http, $location, $window) {
-  // Don't touch this Auth service!!!
-  // it is responsible for authenticating our user
-  // by exchanging the user's username and password
-  // for a JWT from the server
-  // that JWT is then stored in localStorage as 'com.shortly'
-  // after you signin/signup open devtools, click resources,
-  // then localStorage and you'll see your token from the server
+.factory('Auth', function () {
+  var user = '';
   var signin = function (user) {
-    return $http({
-      method: 'POST',
-      url: '/api/users/signin',
-      data: user
-    })
-    .then(function (resp) {
-      return resp.data.token;
+    Parse.initialize("ctKT4hA1TnqKN6Ze4RLs1M7NC3CIXlfGRYfwOQYl", "PSDPr1OqyO0ycuBJxf1bnQOrTkOjk1qYgUUujPoh");
+    var Users = Parse.Object.extend("users");
+    var query = new Parse.Query(Users);
+    query.equalTo("username", user.username);
+    query.equalTo("password", user.password);
+
+    query.find({
+      success: function(results) {
+        alert("Successfully retrieved " + results.length + " scores.");
+        // Do something with the returned Parse.Object values
+        for (var i = 0; i < results.length; i++) { 
+          var object = results[i];
+          alert(object.id + ' - ' + object.get('username'));
+        }
+        user = object.get('username');
+      },
+      error: function(error) {
+        alert("Error: " + error.code + " " + error.message);
+      }
     });
   };
 
   var signup = function (user) {
-    return $http({
-      method: 'POST',
-      url: '/api/users/signup',
-      data: user
-    })
-    .then(function (resp) {
-      return resp.data.token;
-    });
+    console.log('llego con estos datos: '+user);
+    Parse.initialize("ctKT4hA1TnqKN6Ze4RLs1M7NC3CIXlfGRYfwOQYl", "PSDPr1OqyO0ycuBJxf1bnQOrTkOjk1qYgUUujPoh");
+
+    var Users = Parse.Object.extend("users");
+    var newUser = new Users();
+      console.log('got inside of inner function');
+      newUser.save(user).then(function(object) {
+        alert("New User Created");
+      });
   };
 
   var isAuth = function () {
-    return !!$window.localStorage.getItem('com.shortly');
+    return user;
   };
 
   var signout = function () {

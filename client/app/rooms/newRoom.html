@@ -5,10 +5,10 @@
       <input type="text" ng-model="newRoom.code" type = "url" class="form-control" placeholder="Room name">
       <input type="text" ng-model="newRoom.maxOcc" type = "url" class="form-control" placeholder="Maximun Occupancy">
       <input type="text" ng-model="newRoom.numBeds" type = "url" class="form-control" placeholder="Number of Beds">
-      <input type="checkbox" ng-model="newRoom.hasTv" type = "url" class="form-control" placeholder="TV">
+      <input type="checkbox" ng-model="newRoom.hasTv" type = "url" class="form-control" label="Has TV">
       <input type="text" ng-model="newRoom.price" type = "url" class="form-control" placeholder="Price per night">
       <input type="text" ng-model="newRoom.other" type = "url" class="form-control" placeholder="Other">
-      <button hr-alert class="btn btn-primary" ng-click="addRoom(newRoom)">Shorten Link</button>
+      <button hr-alert class="btn btn-primary" ng-click="addRoom(newRoom)">Add Room</button>
    </div class="cold-md-5">
       <h1> {{newRoom.code}} </h1>
       <h3> Maximun occupancy: {{newRoom.maxOcc}} </h3>
@@ -16,7 +16,6 @@
       <h3> Has TV: {{newRoom.hasTv}} </h3>
       <h3> Price per night: {{newRoom.price}} </h3>
       <h3> Other: {{newRoom.other}} </h3>
-      <pre> {{newRoom}} </pre>
 
 
     </div>

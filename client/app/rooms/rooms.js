@@ -1,36 +1,33 @@
 angular.module('deskbell.rooms', [])
 
-.controller('RoomsController', function ($scope, Rooms) {
+.controller('RoomsController', function($scope, Rooms) {
+  angular.extend($scope, Rooms);
+   
+
    $scope.data = [];
+   
+  // $scope.data.rooms = 
 
-   $scope.getRooms = function(){
-   	Rooms.getRooms()
-   	.then(function(data){
-   		console.log('this is the data: ', data);
+  $scope.getRooms()
+  .then(function(data) {
+    console.log('This is de DATA: ', data);
       $scope.data.rooms = data;
-      console.log($scope.data.rooms);
-   	})	
-   	.catch(function (error) {
-        console.error(error);
-      });
-   };
+   });
 
 
-   $scope.addRoom = function(roomData){
-    Rooms.addRoom(roomData)
-    .then(function(data){
-      console.log('this is the data ' , data);
-      $scope.data.rooms
-    })
-    .catch(function (error) {
-        console.error(error);
-      });
-   }
+     // var rooms = [{
+   //  code:'bas42',
+   //  price: '123'
 
-   // $scope.getRooms();
+   // },{
+   //  code:'aabc23',
+   //  price: '432'
+   //  }];
+
+   
 
 })
-.factory('Rooms', function ($http) {
+.factory('Rooms', function () {
   // Your code here
   var getRooms = function(){
 
@@ -39,18 +36,9 @@ angular.module('deskbell.rooms', [])
     var Rooms = Parse.Object.extend("rooms");
     var query = new Parse.Query(Rooms);
      return query.find({
-       success: function(results) {
-         // results is an array of Parse.Object.
+       success: function(theItem) {
         console.log('success');
-        var code = results.get("code");
-        var hasTv = results.get("hasTv");
-        var maxOcc = results.get("maxOcc");
-        var numBeds = results.get("numBeds");
-        var other = results.get("other");
-        var price = results.get("price");
-
-
-
+         
        },
 
        error: function(error) {
@@ -58,7 +46,14 @@ angular.module('deskbell.rooms', [])
         console.log('error');
 
        }
-     });
+     }).then(function(res) {
+      var jsonArray = [];
+         for(var i = 0; i < res.length; i++) {
+           jsonArray.push(res[i].toJSON());
+        }; 
+      console.log('THIS IS DE RES!: ', jsonArray);
+      return jsonArray;
+    });;
 
     };
   var addRoom = function(roomData){

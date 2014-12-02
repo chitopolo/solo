@@ -30,8 +30,15 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="#/signin">Signin <span class="sr-only">(current)</span></a></li>
         <li> <a href="#/signup">Signup</a></li>
-        <li> <a href="#/rooms">Show rooms</a></li>
-        <li> <a href="#/newroom">New room</a></li>
+        <li> <a href="#/rooms">Show Rooms</a></li>
+        <li> <a href="#/newroom">New Room</a></li>
+        <li> <a href="#/guests">Guests</a></li>
+
+        <li> <a href="#/newguest">New Client</a></li>
+        <li> <a href="#/helpdesk">HelpDesk</a></li>
+
+        <li ng-controller="AuthController"><a href=""> Logged in as {{ user }}</a></li>
+
 
     </ul>
     
@@ -54,6 +61,8 @@
 
 <script src="app/auth/auth.js"></script>
 <script src="app/rooms/rooms.js"></script>
+<script src="app/guests/guests.js"></script>
+<script src="app/helpdesk/helpdesk.js"></script>
 <script src="app/app.js"></script>
 </body>
 </html>

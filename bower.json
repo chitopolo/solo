@@ -1,0 +1,17 @@
+{
+  "name": "solo",
+  "version": "0.0.0",
+  "homepage": "https://github.com/chitopolo/2014-10-solo",
+  "authors": [
+    "Rene Polo <renejpolo@me.com>"
+  ],
+  "description": "This is Rene Polo's Solo project. Hack Reactor",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

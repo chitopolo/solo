@@ -1,6 +1,8 @@
 angular.module('deskbell', [
   'deskbell.rooms',
   'deskbell.auth',
+  'deskbell.helpdesk',
+  'deskbell.guests',
   'ngRoute'
 ])
 .config(function($routeProvider, $httpProvider) {
@@ -20,6 +22,18 @@ angular.module('deskbell', [
     .when('/rooms', {
       templateUrl: 'app/rooms/rooms.html',
       controller: 'RoomsController'
+    })
+    .when('/newguest', {
+      templateUrl: 'app/guests/newguest.html',
+      controller: 'GuestsController'
+    })
+    .when('/guests', {
+      templateUrl: 'app/guests/guests.html',
+      controller: 'GuestsController'
+    })
+    .when('/helpdesk', {
+      templateUrl: 'app/helpdesk/helpdesk.html',
+      controller: 'HelpdeskController'
     })
     .otherwise({
       redirectTo: '/rooms'

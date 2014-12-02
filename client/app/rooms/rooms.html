@@ -1,25 +1,20 @@
 <div id='container'>
-  <button ng-click = "getRooms()"> Get rooms  </button>
+  <a ng-click = "getRooms()" class="btn btn-primary"> Get rooms  </a>
   <a href="#/newroom" class="btn btn-primary">New Room</a>
   <div ng-controller="RoomsController">
-  	<input ng-model="search.url" class="form-control" placeholder="Filter by website">
-    <ul class="list-group">
-      <li ng-repeat="room in data.rooms" class="list-group-item fx-fade-down">
-        <div class="row">
-          <div class="col-md-10">
-            <h3>{{ room.name }} <small>{{room.price}}</small> </h3>
-          </div>
-          <div class="col-md-1">
-            <div class ="btn btn-success disabled">TV: {{room.hasTv}} </div>
-          </div>
-          <div class="col-md-1">
-            <a href="{{link.base_url}}/api/links/{{link.code}}" class="btn btn-primary">
-             Go
-            <a>
-          </div>
-        </div>
-      </li>
-    </ul>
-    
+    <table class ="table">
+      <tr>
+        <td> <h3> Room</h3></td>
+        <td><h3>Max Occupancy</h3></td> 
+        <td><h3>Has TV</h3></td>
+        <td><h3>Price</h3></td>
+      </tr>
+      <tr ng-repeat="room in data.rooms">
+        <td><h4>{{ room.code  }}</h4></td>
+        <td><h4>{{room.maxOcc}}</h4></td> 
+        <td><h4>{{room.hasTv}}</h4></td>
+        <td><h4>{{room.price}}</h4></td>
+      </tr>
+    </table>
   </div>
 </div>
