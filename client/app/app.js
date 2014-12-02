@@ -13,12 +13,16 @@ angular.module('deskbell', [
       templateUrl: 'app/auth/signup.html',
       controller: 'AuthController'
     })
+    .when('/newroom', {
+      templateUrl: 'app/rooms/newroom.html',
+      controller: 'RoomsController'
+    })
     .when('/rooms', {
       templateUrl: 'app/rooms/rooms.html',
       controller: 'RoomsController'
     })
     .otherwise({
-      redirectTo: '/links'
+      redirectTo: '/rooms'
     });
     // Your code here
 

@@ -31,6 +31,8 @@
         <li class="active"><a href="#/signin">Signin <span class="sr-only">(current)</span></a></li>
         <li> <a href="#/signup">Signup</a></li>
         <li> <a href="#/rooms">Show rooms</a></li>
+        <li> <a href="#/newroom">New room</a></li>
+
     </ul>
     
 </div><!-- /.navbar-collapse -->
@@ -41,20 +43,6 @@
 
 </div>
 <script>
-    Parse.initialize("ctKT4hA1TnqKN6Ze4RLs1M7NC3CIXlfGRYfwOQYl", "PSDPr1OqyO0ycuBJxf1bnQOrTkOjk1qYgUUujPoh");
-    
-    var TestObject = Parse.Object.extend("TestObject");
-    var testObject = new TestObject();
-      testObject.save({foo: "bar"}, {
-      success: function(object) {
-        $(".success").show();
-      },
-      error: function(model, error) {
-        $(".error").show();
-      }
-    });
-
-
       // var TestObject = Parse.Object.extend("TestObject");
       // var testObject = new TestObject();
       // testObject.save({foo: "bar"}).then(function(object) {

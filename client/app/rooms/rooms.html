@@ -1,14 +1,16 @@
 <div id='container'>
+  <button ng-click = "getRooms()"> Get rooms  </button>
+  <a href="#/newroom" class="btn btn-primary">New Room</a>
   <div ng-controller="RoomsController">
   	<input ng-model="search.url" class="form-control" placeholder="Filter by website">
     <ul class="list-group">
-      <li ng-repeat="link in data.links | filter:search" class="list-group-item fx-fade-down">
+      <li ng-repeat="room in data.rooms" class="list-group-item fx-fade-down">
         <div class="row">
           <div class="col-md-10">
-            <h3>{{ link.title }} <small>{{link.url}}</small> </h3>
+            <h3>{{ room.name }} <small>{{room.price}}</small> </h3>
           </div>
           <div class="col-md-1">
-            <div class ="btn btn-success disabled">Visited: {{link.visits}} </div>
+            <div class ="btn btn-success disabled">TV: {{room.hasTv}} </div>
           </div>
           <div class="col-md-1">
             <a href="{{link.base_url}}/api/links/{{link.code}}" class="btn btn-primary">
