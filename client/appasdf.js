@@ -20,10 +20,10 @@ angular.module('deskbell', [
     .when('/newroom', {
       templateUrl: 'app/rooms/newRoom.html',
       controller: 'RoomsController'
-    })
-    .otherwise({
-      redirectTo: '/rooms'
     });
+    // .otherwise({
+    //   redirectTo: '/rooms'
+    // });
     // Your code here
 
     // We add our $httpInterceptor into the array

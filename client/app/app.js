@@ -24,6 +24,10 @@ angular.module('deskbell', [
       templateUrl: 'app/rooms/rooms.html',
       controller: 'RoomsController'
     })
+    .when('/roomdetail', {
+      templateUrl: 'app/rooms/roomdetail.html',
+      controller: 'RoomsController'
+    })
     .when('/newguest', {
       templateUrl: 'app/guests/newguest.html',
       controller: 'GuestsController'
@@ -34,7 +38,7 @@ angular.module('deskbell', [
     })
     .when('/helpdesk', {
       templateUrl: 'app/helpdesk/helpdesk.html',
-      controller: 'SocketCtrl'
+      controller: 'HelpdeskController'
     })
     .otherwise({
       redirectTo: '/rooms'

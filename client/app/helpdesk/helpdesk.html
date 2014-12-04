@@ -1,15 +1,39 @@
-<style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-      #messages { list-style-type: none; margin: 0; padding: 0; }
-      #messages li { padding: 5px 10px; }
-      #messages li:nth-child(odd) { background: #eee; }
-    </style>
+<div ng-controller="HelpdeskController">
+  <h1>Welcome to the HelpDesk</h1>
+  <div class="col-md-4">
+  <div class="btn btn-info btn-lg">
+    Food
+  </div>
+   <div class="btn btn-info btn-lg">
+    Drinks
+  </div>
+   <div class="btn btn-info btn-lg">
+    Movies
+  </div>
+</div>
+  
+    <table class ="table">
+      <tr>
+        <td><h4> Name</h4></td>
+        <td><h4>Price</h4></td> 
+        <td><h4>Description</h4></td>
+        <td><h4>Category</h4></td>
+        <td><h4>Order for Room</h4></td>
 
-    <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
+      </tr>
+      <tr ng-repeat="food in data.food">
+        <td><h3>{{food.name  }}</h3></td>
+        <td>{{food.price}}</td> 
+        <td>{{food.description}}</td>
+        <td>{{food.category}}</td>
+        <td><a href="" class="btn btn-primary btn-lg">{{food.room_id}}</a></td>
+      </tr>
+    </table>
+
+
+
+
+<div class="col-md-8">
+  
+</div>
+</div>

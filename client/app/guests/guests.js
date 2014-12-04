@@ -6,7 +6,7 @@ angular.module('deskbell.guests', [])
   $scope.data = [];
   $scope.getGuests()
   .then(function(data) {
-    console.log('This is de DATA: ', data);
+    // console.log('This is de DATA: ', data);
       $scope.data.guests = data;
    });
 })
@@ -40,12 +40,12 @@ angular.module('deskbell.guests', [])
 
     };
   var addGuest = function(guestData){
-    console.log('llego con estos datos: '+guestData);
+    // console.log('llego con estos datos: '+guestData);
     Parse.initialize("ctKT4hA1TnqKN6Ze4RLs1M7NC3CIXlfGRYfwOQYl", "PSDPr1OqyO0ycuBJxf1bnQOrTkOjk1qYgUUujPoh");
 
     var Guests = Parse.Object.extend("guests");
     var newGuest = new Guests();
-      console.log('got inside of inner function');
+      // console.log('got inside of inner function');
       newGuest.save(guestData).then(function(object) {
         alert("yay! it worked");
       });

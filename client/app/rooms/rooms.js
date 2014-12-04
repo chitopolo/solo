@@ -6,25 +6,13 @@ angular.module('deskbell.rooms', [])
 
    $scope.data = [];
    
-  // $scope.data.rooms = 
 
   $scope.getRooms()
   .then(function(data) {
-    console.log('This is de DATA: ', data);
+    // console.log('This is de DATA: ', data);
       $scope.data.rooms = data;
    });
 
-
-     // var rooms = [{
-   //  code:'bas42',
-   //  price: '123'
-
-   // },{
-   //  code:'aabc23',
-   //  price: '432'
-   //  }];
-
-   
 
 })
 .factory('Rooms', function () {
@@ -51,7 +39,7 @@ angular.module('deskbell.rooms', [])
          for(var i = 0; i < res.length; i++) {
            jsonArray.push(res[i].toJSON());
         }; 
-      console.log('THIS IS DE RES!: ', jsonArray);
+      // console.log('THIS IS DE RES!: ', jsonArray);
       return jsonArray;
     });;
 
@@ -62,7 +50,7 @@ angular.module('deskbell.rooms', [])
 
     var Rooms = Parse.Object.extend("rooms");
     var newRoom = new Rooms();
-      console.log('got inside of inner function');
+      // console.log('got inside of inner function');
       newRoom.save(roomData).then(function(object) {
         alert("yay! it worked");
       });

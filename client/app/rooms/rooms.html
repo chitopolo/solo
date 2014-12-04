@@ -8,12 +8,14 @@
         <td><h3>Max Occupancy</h3></td> 
         <td><h3>Has TV</h3></td>
         <td><h3>Price</h3></td>
+        <td><h3>Actions</h3></td>
       </tr>
       <tr ng-repeat="room in data.rooms">
-        <td><h4>{{ room.code  }}</h4></td>
-        <td><h4>{{room.maxOcc}}</h4></td> 
-        <td><h4>{{room.hasTv}}</h4></td>
-        <td><h4>{{room.price}}</h4></td>
+        <td>{{ room.code  }}</td>
+        <td>{{room.maxOcc}}</td> 
+        <td>{{room.hasTv}}</td>
+        <td>{{room.price}}</td>
+        <td><a href="#/roomdetail" class="btn btn-primary">Go to the Room</a></td>
       </tr>
     </table>
   </div>
